@@ -1,0 +1,151 @@
+package ece;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+public abstract class ppppp implements ActionListener 
+{ 
+   public static void main(String args[])
+	{
+	JFrame f=new JFrame("garage"); 
+	JFrame f1=new JFrame("Two Wheeler");
+	JFrame f2=new JFrame("Three Wheeler");
+	JFrame f3=new JFrame("four Wheeler");
+	    f.setSize(600,600);
+		f.setLocationRelativeTo(null);
+		f1.setLocationRelativeTo(null);
+		f.setLayout(null);
+		f.setVisible(true);
+		f2.setSize(600,600);
+		f2.setLayout(null);
+		f3.setSize(600,600);
+		f3.setLayout(null);
+		f1.setLayout(null);
+		f1.setSize(600,600);
+		JLabel t1,t2,t3,t4,t6,t7,t8;
+		JTextArea t9,t10,t11;
+		t1=new JLabel("GARAGE");
+		t2=new JLabel("Services provided");
+		t3=new JLabel("Select from below");
+		t4=new JLabel("note:-customers who pay premium will be given additional discounts");
+		t6=new JLabel();
+		t7=new JLabel();
+		t8=new JLabel();
+		t9=new JTextArea();
+		t10=new JTextArea();
+		t11=new JTextArea();
+		JButton b1=new JButton("Two Wheeler");
+		JButton b21=new JButton("Three Wheeler");
+		JButton b3=new JButton("Four Wheeler");
+		JCheckBox c=new JCheckBox("Wants to pay premium");
+		f.add(t1);
+		f.add(t2);
+		f.add(t3);
+		f.add(t4);
+		f.add(b1);
+		f.add(b21);
+		f.add(b3);
+		f.add(c);
+		t1.setBounds(250,10,100,100);
+		t2.setBounds(230,30,120,120);
+		t3.setBounds(230,60,150,150);
+		b1.setBounds(210,160,150,30);
+		b21.setBounds(210,200,150,30);
+		b3.setBounds(210,240,150,30);
+		c.setBounds(200,280,160,140);
+		t4.setBounds(150,320,380,230);
+		b1.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e){ 
+	        f.dispose();
+	        int bill=0;
+	        t6.setText("Following services are provided for two wheeler");
+	        t6.setBounds(170,10,350,250);
+	        f1.add(t6);
+	        JRadioButton rb11=new JRadioButton("complete tune-up = Rs.250");
+	    	JRadioButton rb12=new JRadioButton("deluxe tune-up = Rs.350");
+	    	JRadioButton rb13=new JRadioButton("complete overhaul = Rs.450");
+	    	JButton b11=new JButton("Bill");
+	    	b11.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e1){
+	    		int bill=0;
+	    		if(rb11.isSelected())
+	    		bill=bill+250;
+	    		if(rb12.isSelected())
+	    		bill=bill+350;
+	    		if(rb13.isSelected())
+	    		bill=bill+450;
+	    		t9.setText("Your bill is "+bill);}});
+	    	t9.setBounds(240,350,250,30);
+    		f1.add(t9);
+	    	b11.setBounds(240,270,100,30);
+	    	rb11.setBounds(210,160,200,30);
+	    	rb12.setBounds(210,190,200,30);
+	    	rb13.setBounds(210,220,200,30);
+	    	f1.add(b11);
+	    	f1.add(rb11);
+	    	f1.add(rb12);
+	    	f1.add(rb13);
+	    	f1.setVisible(true);}});
+		b21.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e){
+	         f.dispose();
+			f1.dispose();
+			t7.setText("Following services are provided for three wheeler");
+	        t7.setBounds(170,10,350,250);
+	        JRadioButton rb21=new JRadioButton("Brake work = Rs.200");
+	    	JRadioButton rb22=new JRadioButton("Oxygen sensor replacement = Rs.400");
+	    	JRadioButton rb23=new JRadioButton("Tire repairs and changes = Rs.350");
+	        f2.add(t7);
+	        rb21.setBounds(210,160,250,30);
+	    	rb22.setBounds(210,190,250,30);
+	    	rb23.setBounds(210,220,250,30);
+	    	JButton b12=new JButton("Bill");
+	    	b12.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e1) {
+             int bill=0;
+	    		if(rb21.isSelected())
+	    		bill=bill+200;
+	    		if(rb22.isSelected())
+	    		bill=bill+400;
+	    		if(rb23.isSelected())
+	    		bill=bill+350;
+	    		t10.setText("Your bill is "+bill);}});
+	    	t10.setBounds(240,350,250,30);
+	    	f2.add(t10);
+	    	f2.add(b12);
+	    	b12.setBounds(240,270,100,30);
+	    	f2.add(rb21);
+	    	f2.add(rb22);
+	    	f2.add(rb23);
+			f2.setVisible(true);}});
+		b3.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e){
+	        f.dispose();
+			f1.dispose();
+			f2.dispose();
+			t8.setText("Following services are provided for four wheeler");
+	        t8.setBounds(170,10,350,250);
+	        f3.add(t8);
+			JRadioButton rb31=new JRadioButton("Brake work = Rs.200");
+	    	JRadioButton rb32=new JRadioButton("Oxygen sensor replacement = Rs.400");
+	    	JRadioButton rb33=new JRadioButton("Tire repairs and changes = Rs.350");
+	        rb31.setBounds(210,160,250,30);
+	    	rb32.setBounds(210,190,250,30);
+	    	rb33.setBounds(210,220,250,30);
+	    	JButton b13=new JButton("Bill");
+	    	b13.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e1){
+	    		int bill=0;
+	    		if(rb31.isSelected())
+	    		bill=bill+200;
+	    		if(rb32.isSelected())
+	    		bill=bill+400;
+	    		if(rb33.isSelected())
+	    		bill=bill+350;
+	    		t11.setText("Your bill is "+bill);}});
+	    	t11.setBounds(240,350,250,30);
+	    	f3.add(t11);
+			f3.add(rb31);
+			f3.add(rb32);
+			f3.add(rb33);
+			b13.setBounds(240,270,100,30);
+			f3.add(b13);
+			f3.setVisible(true);}});}}
